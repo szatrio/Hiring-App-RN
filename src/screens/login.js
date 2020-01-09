@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { TextInput, Button, Card } from 'react-native-paper'
 import {Container} from 'native-base'
-import { StyleSheet, ImageBackground} from 'react-native'
+import { StyleSheet, ImageBackground, AsyncStorage} from 'react-native'
 
 class Login extends Component {
     render() {
