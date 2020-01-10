@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Searchbar, Button, Card, Avatar, Badge, IconButton, Colors } from 'react-native-paper'
 import {Container} from 'native-base'
 import { StyleSheet, ImageBackground,View, Text, Image} from 'react-native'
+import {connect} from 'react-redux'
 
 class EngineerList extends Component{
     state = {
@@ -9,6 +10,7 @@ class EngineerList extends Component{
       }
 
     render(){
+      console.log(this.props, "ini props engineerlist")
         return(
             <>
                 <Container style={styles.container}>
@@ -74,4 +76,8 @@ const styles = StyleSheet.create({
    
   });
 
-export default EngineerList
+const mapStateToProps = (state) => ({
+    authUser : state.Auth
+})
+
+export default connect(mapStateToProps)(EngineerList)

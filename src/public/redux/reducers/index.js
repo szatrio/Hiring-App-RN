@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux'
 // import engineers from './engineers'
 // import companies from './companies'
-import auth from './auth'
+import Auth from './auth'
 
 const rootReducer = combineReducers({
-  auth
+  Auth
 })
 
 export default rootReducer

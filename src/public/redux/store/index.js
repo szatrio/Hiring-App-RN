@@ -4,23 +4,23 @@ import {createLogger} from 'redux-logger'
 import thunk from 'redux-thunk'
 import {persistStore, persistReducer} from 'redux-persist'
 
-import rootReducer from '../reducers'
+import rootReducer from '../reducers/index'
 
 const logger = createLogger({})
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['auth']
+  whitelist: ['Auth']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = createStore(
   persistedReducer,
-  applyMiddleware(logger, thunk),
+  applyMiddleware(logger, thunk)
 )
 
 let persistor = persistStore(store)
 
-export {store, persistor}
+export { store, persistor }
