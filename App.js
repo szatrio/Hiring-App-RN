@@ -11,18 +11,18 @@ import Login from './src/screens/login'
 import EngineerList from './src/screens/company/engineerList'
 
 const StackNavigator = createStackNavigator({
+  EngineerList: {
+    screen: EngineerList,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
   Login: {
     screen: Login,
     navigationOptions: {
       headerShown: false,
     },
   },
-  EngineerList: {
-    screen: EngineerList,
-    navigationOptions: {
-      headerShown: false,
-    },
-  }
 })
 
 const Main = createAppContainer(StackNavigator)
