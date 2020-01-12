@@ -7,6 +7,7 @@ import getEngineersReducer from './engineersList'
 const rootReducer = combineReducers({
   Auth,
   getEngineersReducer
+  // getEngineersReducer
 })
 
 export default rootReducer

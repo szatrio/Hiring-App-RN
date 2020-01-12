@@ -9,16 +9,23 @@ import { store, persistor } from './src/public/redux/store/index'
 
 import Login from './src/screens/login'
 import EngineerList from './src/screens/company/engineerList'
+import EngineerDetail from './src/screens/company/engDetail'
 
 const StackNavigator = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
   EngineerList: {
     screen: EngineerList,
     navigationOptions: {
       headerShown: false,
     },
   },
-  Login: {
-    screen: Login,
+  EngineerDetail: {
+    screen: EngineerDetail,
     navigationOptions: {
       headerShown: false,
     },
