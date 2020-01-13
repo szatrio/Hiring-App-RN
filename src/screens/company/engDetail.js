@@ -16,7 +16,7 @@ export default class engDetail extends Component {
                         <View style={{flexDirection: 'row'}}>
                             <View style={{flexDirection: 'column'}}>
                                 <Image style={{width: 100, height: 100, borderRadius:50, margin:20, marginLeft:10, borderWidth:5, borderColor: 'white', marginTop: -50}} source={require('../../assets/img/default-propic.jpg')} />
-                                <Button style={{width: 50, marginLeft:30}} mode="contained" onPress={() => console.log('Pressed')}>Hire</Button>
+                                <Button style={{width: 50, marginLeft:30}} mode="contained" onPress={() => this.props.navigation.push('Select Project', {engineer: eng} )}>Hire</Button>
                             </View>
                                 <View style={{flexDirection: 'column', marginTop:-35, marginLeft:15}}>
                                 <Text style={{color: "white", textShadowColor: 'black', textShadowOffset: { width: 0, height: -3 },textShadowRadius: 10, fontSize: 20, fontWeight: 'bold'}}>

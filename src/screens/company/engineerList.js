@@ -7,6 +7,7 @@ import { getEngineersAction } from '../../public/redux/actions/engineersList'
 import { ButtonGroup } from 'react-native-elements'
 // import { createDrawerNavigator, createAppContainer } from 'react-navigation-drawer'
 import login from '../login'
+import asios from 'axios'
 
 import CardEngineer from './cardEngineer'
 
@@ -17,11 +18,13 @@ class EngineerList extends Component{
         this.state = {
           firstQuery: '',
           visible: false,
-          selectedIndex: 0
+          selectedIndex: 0,
+          searchNmae: ''
         }
         this.updateIndex = this.updateIndex.bind(this)
         this.openDrawer = this.openDrawer.bind(this)
       }
+
 
     componentDidMount(){
       // this.doFilter()
@@ -54,7 +57,7 @@ class EngineerList extends Component{
       // console.log(this.state.selectedIndex," ini selectedIndex")  
       const buttons = ['ASC', 'DESC']
       // console.log(JSON.stringify(this.props.authUser.userCompany.name, null, 4), "ini props engineerlist")
-      let userName = (this.props.authUser.userCompany.name)? this.props.authUser.userCompany.name: this.props.authUser.userEngineer.name
+      let userName = (this.props.authUser.userEngineer.name)? this.props.authUser.userEngineer.name: this.props.authUser.userCompany.name
       let drawer = <View style={{flex: 1, backgroundColor: '#fff'}}>
                     <Container>
                     <View style={{backgroundColor:'#AB84C8'}}>
@@ -64,10 +67,11 @@ class EngineerList extends Component{
                       </TouchableOpacity>
                     </View>
                     <TouchableOpacity style={{marginTop: 15}}>
-                      <Drawer.Item icon={"briefcase-check"} label="Projects" />
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                      <Drawer.Item icon={"briefcase-check"} label="Projects" />
+                      {(this.props.authUser.userEngineer.name)?
+                      <Drawer.Item onPress={() => this.props.navigation.push("Engineer Projects")} icon={"briefcase-check"} label="My Projects" />
+                      :
+                      <Drawer.Item onPress={() => this.props.navigation.push("Company Projects")} icon={"briefcase-check"} label="Projects" />
+                      }
                     </TouchableOpacity>
                     <Divider />
                     <TouchableOpacity onPress={() => this.props.navigation.push("Login")}>

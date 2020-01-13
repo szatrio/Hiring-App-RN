@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 import { BASE_URL } from 'react-native-dotenv'
 
 const api = 'http://'+BASE_URL+':8000/user/login'

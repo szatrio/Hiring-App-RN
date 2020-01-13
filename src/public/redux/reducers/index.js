@@ -3,10 +3,12 @@ import {combineReducers} from 'redux'
 // import companies from './companies'
 import Auth from './auth'
 import getEngineersReducer from './engineersList'
+import Project from './project'
 
 const rootReducer = combineReducers({
   Auth,
-  getEngineersReducer
+  getEngineersReducer,
+  Project
   // getEngineersReducer
 })
 

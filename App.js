@@ -10,16 +10,22 @@ import { store, persistor } from './src/public/redux/store/index'
 import Login from './src/screens/login'
 import EngineerList from './src/screens/company/engineerList'
 import EngineerDetail from './src/screens/company/engDetail'
+import CompanyProject from './src/screens/company/project'
+import AddComProject from './src/screens/company/addProject'
+import EngineerProject from './src/screens/engineer/project'
+import ReplyProject from './src/screens/engineer/replyProject'
+import SelectProject from './src/screens/company/selectProject'
+import ConfirmSendProject from './src/screens/company/confirmSendProject'
 
 const StackNavigator = createStackNavigator({
-  Login: {
-    screen: Login,
+  EngineerList: {
+    screen: EngineerList,
     navigationOptions: {
       headerShown: false,
     },
   },
-  EngineerList: {
-    screen: EngineerList,
+  Login: {
+    screen: Login,
     navigationOptions: {
       headerShown: false,
     },
@@ -30,6 +36,24 @@ const StackNavigator = createStackNavigator({
       headerShown: false,
     },
   },
+  'Company Projects': {
+    screen: CompanyProject,    
+  },
+  'Add Project':{
+    screen: AddComProject
+  },
+  'Engineer Projects':{
+    screen: EngineerProject
+  },
+  'Reply Project':{
+    screen: ReplyProject
+  },
+  'Select Project':{
+    screen: SelectProject
+  },
+  'Confirm Send Project':{
+    screen: ConfirmSendProject
+  }
 })
 
 const Main = createAppContainer(StackNavigator)
